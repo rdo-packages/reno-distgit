@@ -18,7 +18,7 @@
 
 Name:           python-%{pypi_name}
 Version:        0.1.0
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        Release NOtes manager
 
 License:        ASL 2.0
@@ -143,6 +143,9 @@ rm -rf html/.{doctrees,buildinfo}
 %license LICENSE 
 
 %changelog
+* Tue Nov 10 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org>
+- Rebuilt for https://fedoraproject.org/wiki/Changes/python3.5
+
 * Thu Nov  5 2015 Toshio Kuratomi <toshio@fedoraproject.org> - 0.1.0-3
 - Ship the reno script against python3 to comply with the python guidelines and
   solve the issue of the python3 package depending on /usr/bin/python2
