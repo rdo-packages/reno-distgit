@@ -1,3 +1,5 @@
-# UUID                                  	Group Name
-#
-6a84ffcb0cb37cc9b6db5b24add4f2092f2fdf4d	reno-distgit-ptl
+# UUID          Group Name
+6ddfecad023c6f4fa3ac8c4d2583c502ea675a73 	Non-Interactive Users
+a1a387addf9eae59a4f9c5975a57292268490fec       	reno-distgit-core
+6a84ffcb0cb37cc9b6db5b24add4f2092f2fdf4d        	reno-distgit-ptl
+global:Registered-Users		Registered Users
