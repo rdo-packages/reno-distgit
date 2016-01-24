@@ -2,6 +2,7 @@
 
 %if 0%{?fedora}
 %global with_python3 1
+%endif
 
 # Only reason to choose 24 is that that's what was in development when we made
 # the switch for this package.  Fedora Policy was to have made this switch for
@@ -12,11 +13,10 @@
 %global default_python 2
 %endif
 
-%endif
 
 Name:           python-%{pypi_name}
 Version:        1.3.1
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Release NOtes manager
 
 License:        ASL 2.0
@@ -58,9 +58,9 @@ Managing release notes for a complex project over a long period
 of time with many releases can be time consuming and error prone. Reno
 helps automate the hard parts.
 
-%if 0%{with_python3}
+%if 0%{?with_python3}
 %package -n     python3-%{pypi_name}
-Summary:        Release Notes Manager
+Summary:        RElease NOtes manager
 %{?python_provide:%python_provide python3-%{pypi_name}}
 
 BuildRequires:  python3-devel
@@ -91,48 +91,52 @@ Summary:        Reno documentation
 Documentation for Reno
 
 %prep
+# FIXME: workaround required to build reno
 %autosetup -n %{pypi_name}-%{version} -S git
 
 %build
 %py2_build
-%if 0%{with_python3}
+%if 0%{?with_python3}
 %py3_build
 %endif
 
 %install
-%if 0%{with_python3}
-%py3_install
-%if %{default_python} >= 3
-mv %{buildroot}%{_bindir}/%{pypi_name} ./%{pypi_name}.py3
-%endif
-%endif
-
 %py2_install
+mv %{buildroot}%{_bindir}/%{pypi_name} %{buildroot}%{_bindir}/python2-%{pypi_name}
 
-%if %{default_python} >= 3
-mv %{pypi_name}.py3 %{buildroot}%{_bindir}/%{pypi_name}
+%if 0%{?with_python3}
+%py3_install
+mv %{buildroot}%{_bindir}/%{pypi_name} %{buildroot}%{_bindir}/python3-%{pypi_name}
+%endif
+
+%if 0%{?default_python} >= 3
+ln -s %{_bindir}/python3-%{pypi_name} %{buildroot}%{_bindir}/%{pypi_name}
+%else
+ln -s %{_bindir}/python2-%{pypi_name} %{buildroot}%{_bindir}/%{pypi_name}
 %endif
 
 # generate html docs
-%{__python} setup.py build_sphinx
+%{__python2} setup.py build_sphinx
 rm -rf doc/build/html/.{doctrees,buildinfo} doc/build/html/objects.inv
 
 %files -n python2-%{pypi_name} 
 %doc doc/source/readme.rst README.rst
 %license LICENSE
-%if %{default_python} <= 2
+%if 0%{?default_python} <= 2
 %{_bindir}/%{pypi_name}
 %endif
+%{_bindir}/python2-%{pypi_name}
 %{python2_sitelib}/%{pypi_name}
 %{python2_sitelib}/%{pypi_name}-%{version}-py?.?.egg-info
 
-%if 0%{with_python3}
+%if 0%{?with_python3}
 %files -n python3-%{pypi_name} 
 %doc doc/source/readme.rst README.rst
 %license LICENSE
-%if %{default_python} >= 3
+%if 0%{?default_python} >= 3
 %{_bindir}/%{pypi_name}
 %endif
+%{_bindir}/python3-%{pypi_name}
 %{python3_sitelib}/%{pypi_name}
 %{python3_sitelib}/%{pypi_name}-%{version}-py?.?.egg-info
 %endif
@@ -142,6 +146,10 @@ rm -rf doc/build/html/.{doctrees,buildinfo} doc/build/html/objects.inv
 %license LICENSE 
 
 %changelog
+* Sun Jan 24 2016 Haïkel Guémar <hguemar@fedoraproject.org> - 1.3.1-2
+- Simplify macros and reno CLI generation
+- Fix build on EL7
+
 * Fri Jan 22 2016 Paul Belanger <pabelanger@redhat.com> 1.3.1-1
 - New upstream 1.3.1 release
 - Switch to setup.py build_sphinx to keep inline with upstream documentation
