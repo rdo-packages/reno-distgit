@@ -4,7 +4,7 @@
 %global with_python3 1
 %endif
 
-# Currently, we cannot generate reno docs from a tarball due to 
+# Currently, we cannot generate reno docs from a tarball due to
 # https://bugs.launchpad.net/reno/+bug/1520096
 %global with_docs 0
 
@@ -45,7 +45,7 @@ BuildRequires:  python-pbr
 BuildRequires:  python-babel
 BuildRequires:  python-sphinx
 BuildRequires:  python-oslo-sphinx
-BuildRequires: 	PyYAML
+BuildRequires:  PyYAML
 BuildRequires:  git
 
 Requires:	python-pbr
@@ -120,13 +120,13 @@ mv %{pypi_name}.py3 %{buildroot}%{_bindir}/%{pypi_name}
 %endif
 
 %if 0%{?with_docs}
-# generate html docs 
+# generate html docs
 sphinx-build doc/source html
 # remove the sphinx-build leftovers
 rm -rf html/.{doctrees,buildinfo}
 %endif
 
-%files -n python2-%{pypi_name} 
+%files -n python2-%{pypi_name}
 %doc doc/source/readme.rst README.rst
 %license LICENSE
 %if 0%{?default_python} <= 2
@@ -136,7 +136,7 @@ rm -rf html/.{doctrees,buildinfo}
 %{python2_sitelib}/%{pypi_name}-*.egg-info
 
 %if 0%{?with_python3}
-%files -n python3-%{pypi_name} 
+%files -n python3-%{pypi_name}
 %doc doc/source/readme.rst README.rst
 %license LICENSE
 %if 0%{?default_python} >= 3
@@ -150,6 +150,6 @@ rm -rf html/.{doctrees,buildinfo}
 %if 0%{?with_docs}
 %doc html
 %endif
-%license LICENSE 
+%license LICENSE
 
 %changelog
