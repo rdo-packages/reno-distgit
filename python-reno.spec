@@ -29,7 +29,7 @@ BuildArch:      noarch
 
 %description
 Reno is a release notes manager for storing
-release notes in a gitnrepository and then building documentation from them.
+release notes in a git repository and then building documentation from them.
 
 Managing release notes for a complex project over a long period
 of time with many releases can be time consuming and error prone. Reno
@@ -55,7 +55,7 @@ Requires:   git
 
 %description -n python2-%{pypi_name}
 Reno is a release notes manager for storing
-release notes in a gitnrepository and then building documentation from them.
+release notes in a git repository and then building documentation from them.
 
 Managing release notes for a complex project over a long period
 of time with many releases can be time consuming and error prone. Reno
