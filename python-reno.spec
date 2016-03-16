@@ -15,7 +15,7 @@
 
 
 Name:           python-%{pypi_name}
-Version:        1.5.0
+Version:        1.6.0
 Release:        1%{?dist}
 Summary:        Release NOtes manager
 
@@ -146,6 +146,9 @@ rm -rf doc/build/html/.{doctrees,buildinfo} doc/build/html/objects.inv
 %license LICENSE 
 
 %changelog
+* Tue Mar 15 2016 Paul Belanger <pabelanger@redhat.com> - 1.6.0-1
+- New upstream 1.6.0 release
+
 * Thu Feb 18 2016 Paul Belanger <pabelanger@redhat.com> - 1.5.0-1
 - New upstream 1.5.0 release
 - Fix rpmlint spelling-error warnings
