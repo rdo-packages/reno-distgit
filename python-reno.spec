@@ -15,7 +15,7 @@
 
 
 Name:           python-%{pypi_name}
-Version:        1.6.0
+Version:        1.6.2
 Release:        1%{?dist}
 Summary:        Release NOtes manager
 
@@ -146,6 +146,9 @@ rm -rf doc/build/html/.{doctrees,buildinfo} doc/build/html/objects.inv
 %license LICENSE 
 
 %changelog
+* Thu Apr 07 2016 Haikel Guemar <hguemar@fedoraproject.org> 1.6.2-1
+- Update to 1.6.2
+
 * Tue Mar 15 2016 Paul Belanger <pabelanger@redhat.com> - 1.6.0-1
 - New upstream 1.6.0 release
 
