@@ -25,7 +25,7 @@ Summary:        Release NOtes manager
 
 License:        ASL 2.0
 URL:            http://www.openstack.org/
-Source0:        https://pypi.python.org/packages/source/r/%{pypi_name}/%{pypi_name}-%{version}.tar.gz
+Source0:        https://tarballs.openstack.org/%{pypi_name}/%{pypi_name}-%{upstream_version}.tar.gz
 BuildArch:      noarch
 
 %description
