@@ -51,6 +51,7 @@ BuildRequires:  git
 Requires:	python-pbr
 Requires:	python-babel
 Requires:	PyYAML
+Requires:	python-six
 Requires:   git
 
 %description -n python2-%{pypi_name}
@@ -79,6 +80,7 @@ BuildRequires:  git
 Requires:	python3-pbr
 Requires:	python3-babel
 Requires:	python3-PyYAML
+Requires:	python3-six
 Requires:   git
 
 %description -n python3-%{pypi_name}
