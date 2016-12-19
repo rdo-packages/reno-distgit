@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fab399f4_fde1639b",
+        "filename": "python-reno.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 85
+      },
+      "writtenOn": "2016-12-19T14:14:52Z",
+      "side": 1,
+      "message": "Is dulwich not required also as BR ?",
+      "revId": "d5e5c83ca6abb08de51c20c2fa52723efe8f4e5e",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fab399f4_dde49fae",
+        "filename": "python-reno.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 85
+      },
+      "writtenOn": "2016-12-19T14:14:52Z",
+      "side": 1,
+      "message": "TODO as followup: remove TABs from above and below lines",
+      "revId": "d5e5c83ca6abb08de51c20c2fa52723efe8f4e5e",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
