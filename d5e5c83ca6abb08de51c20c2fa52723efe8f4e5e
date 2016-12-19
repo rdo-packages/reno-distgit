@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fab399f4_c03672e7",
+        "filename": "python-reno.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2016-12-19T16:33:48Z",
+      "side": 1,
+      "message": "Not needed, reno is building fine without it. We\u0027re only hitting the issue when packages depending on reno to build use it.",
+      "parentUuid": "fab399f4_fde1639b",
+      "revId": "d5e5c83ca6abb08de51c20c2fa52723efe8f4e5e",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fab399f4_dde49fae",
         "filename": "python-reno.spec",
         "patchSetId": 1
