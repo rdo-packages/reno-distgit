@@ -132,7 +132,7 @@ rm -rf html/.{doctrees,buildinfo}
 %endif
 
 %files -n python2-%{pypi_name}
-%doc doc/source/readme.rst README.rst
+%doc README.rst
 %license LICENSE
 %if 0%{?default_python} <= 2
 %{_bindir}/%{pypi_name}
@@ -142,7 +142,7 @@ rm -rf html/.{doctrees,buildinfo}
 
 %if 0%{?with_python3}
 %files -n python3-%{pypi_name}
-%doc doc/source/readme.rst README.rst
+%doc README.rst
 %license LICENSE
 %if 0%{?default_python} >= 3
 %{_bindir}/%{pypi_name}
