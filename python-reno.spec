@@ -19,8 +19,8 @@
 %endif
 
 Name:           python-%{pypi_name}
-Version:        XXX
-Release:        XXX
+Version:        2.0.3
+Release:        1%{?dist}
 Summary:        Release NOtes manager
 
 License:        ASL 2.0
@@ -158,3 +158,6 @@ rm -rf html/.{doctrees,buildinfo}
 %license LICENSE
 
 %changelog
+* Wed Feb 08 2017 Alfredo Moralejo <amoralej@redhat.com> 2.0.3-1
+- Update to 2.0.3
+
