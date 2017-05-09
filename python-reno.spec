@@ -19,7 +19,7 @@
 %endif
 
 Name:           python-%{pypi_name}
-Version:        2.0.3
+Version:        2.2.1
 Release:        1%{?dist}
 Summary:        Release NOtes manager
 
@@ -158,6 +158,9 @@ rm -rf html/.{doctrees,buildinfo}
 %license LICENSE
 
 %changelog
+* Tue May 09 2017 rdo-trunk <javier.pena@redhat.com> 2.2.1-1
+- Update to 2.2.1
+
 * Wed Feb 08 2017 Alfredo Moralejo <amoralej@redhat.com> 2.0.3-1
 - Update to 2.0.3
 
