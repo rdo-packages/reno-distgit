@@ -18,6 +18,14 @@
 %global default_python 2
 %endif
 
+%global common_desc \
+Reno is a release notes manager for storing \
+release notes in a git repository and then building documentation from them. \
+\
+Managing release notes for a complex project over a long period \
+of time with many releases can be time consuming and error prone. Reno \
+helps automate the hard parts.
+
 Name:           python-%{pypi_name}
 Version:        XXX
 Release:        XXX
@@ -29,12 +37,7 @@ Source0:        https://tarballs.openstack.org/%{pypi_name}/%{pypi_name}-%{upstr
 BuildArch:      noarch
 
 %description
-Reno is a release notes manager for storing
-release notes in a git repository and then building documentation from them.
-
-Managing release notes for a complex project over a long period
-of time with many releases can be time consuming and error prone. Reno
-helps automate the hard parts.
+%{common_desc}
 
 %package -n     python2-%{pypi_name}
 Summary:        RElease NOtes manager
@@ -57,12 +60,7 @@ Requires:	python-six
 Requires:   git
 
 %description -n python2-%{pypi_name}
-Reno is a release notes manager for storing
-release notes in a git repository and then building documentation from them.
-
-Managing release notes for a complex project over a long period
-of time with many releases can be time consuming and error prone. Reno
-helps automate the hard parts.
+%{common_desc}
 
 %if 0%{?with_python3}
 
@@ -87,12 +85,7 @@ Requires:	python3-six
 Requires:   git
 
 %description -n python3-%{pypi_name}
-Reno is a release notes manager for storing
-release notes in a gitnrepository and then building documentation from them.
-
-Managing release notes for a complex project over a long period
-of time with many releases can be time consuming and error prone. Reno
-helps automate the hard parts.
+%{common_desc}
 
 %endif
 
