@@ -44,19 +44,27 @@ Summary:        RElease NOtes manager
 %{?python_provide:%python_provide python2-%{pypi_name}}
 
 BuildRequires:  python2-devel
-BuildRequires:  python-setuptools
-BuildRequires:  python-pbr
-BuildRequires:  python-babel
-BuildRequires:  python-sphinx
-BuildRequires:  python-oslo-sphinx
+BuildRequires:  python2-setuptools
+BuildRequires:  python2-pbr
+BuildRequires:  python2-babel
+BuildRequires:  python2-sphinx
+BuildRequires:  python2-oslo-sphinx
+%if 0%{?fedora} > 0
+BuildRequires:  python2-pyyaml
+%else
 BuildRequires:  PyYAML
+%endif
 BuildRequires:  git
 
-Requires:	python-pbr
-Requires:	python-babel
-Requires:   python-dulwich
-Requires:	PyYAML
-Requires:	python-six
+Requires:	python2-pbr
+Requires:	python2-babel
+Requires:   python2-dulwich
+%if 0%{?fedora} > 0
+Requires:   python2-pyyaml
+%else
+Requires:   PyYAML
+%endif
+Requires:	python2-six
 Requires:   git
 
 %description -n python2-%{pypi_name}
