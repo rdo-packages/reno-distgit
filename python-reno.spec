@@ -159,3 +159,4 @@ rm -rf html/.{doctrees,buildinfo}
 %license LICENSE
 
 %changelog
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/reno/commit/?id=52d4c1961da3692bffc1f26f47de11d33c0e545b
