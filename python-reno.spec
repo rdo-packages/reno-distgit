@@ -44,6 +44,7 @@ Summary:        RElease NOtes manager
 %{?python_provide:%python_provide python2-%{pypi_name}}
 
 BuildRequires:  python2-devel
+BuildRequires:  python2-dulwich
 BuildRequires:  python2-setuptools
 BuildRequires:  python2-pbr
 BuildRequires:  python2-babel
@@ -51,6 +52,8 @@ BuildRequires:  python2-sphinx
 BuildRequires:  python2-oslo-sphinx
 %if 0%{?fedora} > 0
 BuildRequires:  python2-pyyaml
+# Until https://src.fedoraproject.org/rpms/python-dulwich/pull-request/3 is merged, we need this
+BuildRequires:  python2-certifi
 %else
 BuildRequires:  PyYAML
 %endif
@@ -61,6 +64,8 @@ Requires:	python2-babel
 Requires:   python2-dulwich
 %if 0%{?fedora} > 0
 Requires:   python2-pyyaml
+# Until https://src.fedoraproject.org/rpms/python-dulwich/pull-request/3 is merged, we need this
+Requires:  python2-certifi
 %else
 Requires:   PyYAML
 %endif
@@ -77,6 +82,9 @@ Summary:        RElease NOtes manager
 %{?python_provide:%python_provide python3-%{pypi_name}}
 
 BuildRequires:  python3-devel
+BuildRequires:  python3-dulwich
+# Until https://src.fedoraproject.org/rpms/python-dulwich/pull-request/3 is merged, we need this
+BuildRequires:  python3-certifi
 BuildRequires:  python3-setuptools
 BuildRequires:  python3-pbr
 BuildRequires:  python3-babel
@@ -88,6 +96,8 @@ BuildRequires:  git
 Requires:	python3-pbr
 Requires:	python3-babel
 Requires:   python3-dulwich
+# Until https://src.fedoraproject.org/rpms/python-dulwich/pull-request/3 is merged, we need this
+Requires:   python3-certifi
 Requires:	python3-PyYAML
 Requires:	python3-six
 Requires:   git
