@@ -44,6 +44,7 @@ Summary:        RElease NOtes manager
 %{?python_provide:%python_provide python2-%{pypi_name}}
 
 BuildRequires:  python2-devel
+BuildRequires:  python2-dulwich
 BuildRequires:  python2-setuptools
 BuildRequires:  python2-pbr
 BuildRequires:  python2-babel
@@ -77,6 +78,7 @@ Summary:        RElease NOtes manager
 %{?python_provide:%python_provide python3-%{pypi_name}}
 
 BuildRequires:  python3-devel
+BuildRequires:  python3-dulwich
 BuildRequires:  python3-setuptools
 BuildRequires:  python3-pbr
 BuildRequires:  python3-babel
