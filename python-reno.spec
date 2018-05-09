@@ -49,7 +49,6 @@ BuildRequires:  python2-setuptools
 BuildRequires:  python2-pbr
 BuildRequires:  python2-babel
 BuildRequires:  python2-sphinx
-BuildRequires:  python2-oslo-sphinx
 %if 0%{?fedora} > 0
 BuildRequires:  python2-pyyaml
 # Until https://src.fedoraproject.org/rpms/python-dulwich/pull-request/3 is merged, we need this
@@ -89,7 +88,6 @@ BuildRequires:  python3-setuptools
 BuildRequires:  python3-pbr
 BuildRequires:  python3-babel
 BuildRequires:  python3-sphinx
-BuildRequires:  python3-oslo-sphinx
 BuildRequires:  python3-PyYAML
 BuildRequires:  git
 
