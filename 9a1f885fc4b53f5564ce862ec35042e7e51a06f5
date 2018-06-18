@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bab921fb_7aa0f5f4",
+        "filename": "python-reno.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 85
+      },
+      "writtenOn": "2018-06-18T16:49:46Z",
+      "side": 1,
+      "message": "This is only for fedora \u003e\u003d 28\nlatest f27 still has PyYAML\nhttps://koji.fedoraproject.org/koji/buildinfo?buildID\u003d943336",
+      "revId": "9a1f885fc4b53f5564ce862ec35042e7e51a06f5",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
