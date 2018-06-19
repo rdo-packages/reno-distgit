@@ -16,6 +16,24 @@
       "revId": "9a1f885fc4b53f5564ce862ec35042e7e51a06f5",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab921fb_1a033944",
+        "filename": "python-reno.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 85
+      },
+      "writtenOn": "2018-06-19T09:22:24Z",
+      "side": 1,
+      "message": "For sync to Fedora Rawhide, I went with \n%if 0%{?fedora} \u003e 27\n\nhttps://src.fedoraproject.org/rpms/python-reno/c/57dca060cc2729267099d3a58136a6772f6c5aee?branch\u003dmaster\n\nI\u0027ll propose that back to rpm-master",
+      "parentUuid": "bab921fb_7aa0f5f4",
+      "revId": "9a1f885fc4b53f5564ce862ec35042e7e51a06f5",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
     }
   ]
 }
