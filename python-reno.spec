@@ -25,8 +25,8 @@ of time with many releases can be time consuming and error prone. Reno \
 helps automate the hard parts.
 
 Name:           python-%{pypi_name}
-Version:        XXX
-Release:        XXX
+Version:        2.11.3
+Release:        1%{?dist}
 Summary:        Release NOtes manager
 
 License:        ASL 2.0
@@ -114,3 +114,6 @@ rm -rf html/.{doctrees,buildinfo}
 %license LICENSE
 
 %changelog
+* Thu Sep 19 2019 RDO <dev@lists.rdoproject.org> 2.11.3-1
+- Update to 2.11.3
+
