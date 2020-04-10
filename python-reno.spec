@@ -48,7 +48,6 @@ BuildRequires:  python%{pyver}-devel
 BuildRequires:  python%{pyver}-dulwich
 BuildRequires:  python%{pyver}-setuptools
 BuildRequires:  python%{pyver}-pbr
-BuildRequires:  python%{pyver}-babel
 BuildRequires:  python%{pyver}-sphinx
 BuildRequires:  git
 
@@ -56,15 +55,11 @@ BuildRequires:  git
 %if %{pyver} == 2
 BuildRequires:  PyYAML
 %else
-# Until https://src.fedoraproject.org/rpms/python-dulwich/pull-request/3 is merged, we need this
-BuildRequires:  python%{pyver}-certifi
 BuildRequires:  python%{pyver}-PyYAML
 %endif
 
 Requires:  python%{pyver}-pbr
-Requires:  python%{pyver}-babel
 Requires:  python%{pyver}-dulwich
-Requires:  python%{pyver}-six
 Requires:  git
 
 # Handle python2 exception
@@ -72,8 +67,6 @@ Requires:  git
 Requires:  PyYAML
 %else
 Requires:  python%{pyver}-PyYAML
-# Until https://src.fedoraproject.org/rpms/python-dulwich/pull-request/3 is merged, we need this
-Requires:  python%{pyver}-certifi
 %endif
 
 %description -n python%{pyver}-%{pypi_name}
