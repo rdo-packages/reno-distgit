@@ -1,14 +1,3 @@
-# Macros for py2/py3 compatibility
-%if 0%{?fedora} || 0%{?rhel} > 7
-%global pyver %{python3_pkgversion}
-%else
-%global pyver 2
-%endif
-%global pyver_bin python%{pyver}
-%global pyver_sitelib %python%{pyver}_sitelib
-%global pyver_install %py%{pyver}_install
-%global pyver_build %py%{pyver}_build
-# End of macros for py2/py3 compatibility
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 %global pypi_name reno
 
@@ -37,46 +26,26 @@ BuildArch:      noarch
 %description
 %{common_desc}
 
-%package -n     python%{pyver}-%{pypi_name}
+%package -n     python3-%{pypi_name}
 Summary:        RElease NOtes manager
-%{?python_provide:%python_provide python%{pyver}-%{pypi_name}}
-%if %{pyver} == 3
+%{?python_provide:%python_provide python3-%{pypi_name}}
 Obsoletes: python2-%{pypi_name} < %{version}-%{release}
-%endif
 
-BuildRequires:  python%{pyver}-devel
-BuildRequires:  python%{pyver}-dulwich
-BuildRequires:  python%{pyver}-setuptools
-BuildRequires:  python%{pyver}-pbr
-BuildRequires:  python%{pyver}-babel
-BuildRequires:  python%{pyver}-sphinx
-BuildRequires:  git
+BuildRequires:  python3-devel
+BuildRequires:  python3-dulwich
+BuildRequires:  python3-setuptools
+BuildRequires:  python3-pbr
+BuildRequires:  python3-sphinx
 
-# Handle python2 exception
-%if %{pyver} == 2
-BuildRequires:  PyYAML
-%else
-# Until https://src.fedoraproject.org/rpms/python-dulwich/pull-request/3 is merged, we need this
-BuildRequires:  python%{pyver}-certifi
-BuildRequires:  python%{pyver}-PyYAML
-%endif
+BuildRequires:  python3-PyYAML
 
-Requires:  python%{pyver}-pbr
-Requires:  python%{pyver}-babel
-Requires:  python%{pyver}-dulwich
-Requires:  python%{pyver}-six
+Requires:  python3-pbr
+Requires:  python3-dulwich
 Requires:  git
 
-# Handle python2 exception
-%if %{pyver} == 2
-Requires:  PyYAML
-%else
-Requires:  python%{pyver}-PyYAML
-# Until https://src.fedoraproject.org/rpms/python-dulwich/pull-request/3 is merged, we need this
-Requires:  python%{pyver}-certifi
-%endif
+Requires:  python3-PyYAML
 
-%description -n python%{pyver}-%{pypi_name}
+%description -n python3-%{pypi_name}
 %{common_desc}
 
 %package -n python-%{pypi_name}-doc
@@ -88,24 +57,24 @@ Documentation for reno
 %autosetup -n %{pypi_name}-%{upstream_version}
 
 %build
-%{pyver_build}
+%{py3_build}
 
 %install
-%{pyver_install}
+%{py3_install}
 
 %if 0%{?with_docs}
 # generate html docs
-sphinx-build-%{pyver} doc/source html
-# remove the sphinx-build-%{pyver} leftovers
+sphinx-build-3 doc/source html
+# remove the sphinx-build-3 leftovers
 rm -rf html/.{doctrees,buildinfo}
 %endif
 
-%files -n python%{pyver}-%{pypi_name}
+%files -n python3-%{pypi_name}
 %doc README.rst
 %license LICENSE
 %{_bindir}/%{pypi_name}
-%{pyver_sitelib}/%{pypi_name}
-%{pyver_sitelib}/%{pypi_name}-*.egg-info
+%{python3_sitelib}/%{pypi_name}
+%{python3_sitelib}/%{pypi_name}-*.egg-info
 
 %files -n python-%{pypi_name}-doc
 %if 0%{?with_docs}
