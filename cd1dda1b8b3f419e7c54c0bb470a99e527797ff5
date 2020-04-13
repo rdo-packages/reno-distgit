@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7fba3da0_3cf98abc",
+        "filename": "python-reno.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 403
+      },
+      "writtenOn": "2020-04-13T07:50:44Z",
+      "side": 0,
+      "message": "can also cleanup this https://github.com/openstack/reno/commit/871853f4b5326f2d0f72cbdbe478f245e9c03743",
+      "range": {
+        "startLine": 68,
+        "startChar": 0,
+        "endLine": 68,
+        "endChar": 14
+      },
+      "revId": "cd1dda1b8b3f419e7c54c0bb470a99e527797ff5",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
