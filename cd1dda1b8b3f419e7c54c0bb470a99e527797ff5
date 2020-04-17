@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "93504f4b_184990ba",
+        "filename": "python-reno.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 403
+      },
+      "writtenOn": "2020-04-17T12:16:44Z",
+      "side": 0,
+      "message": "this didn\u0027t merged but it\u0027s made optional now https://github.com/dulwich/dulwich/blob/upstream/0.19.14/dulwich/client.py#L1481",
+      "range": {
+        "startLine": 75,
+        "startChar": 0,
+        "endLine": 75,
+        "endChar": 96
+      },
+      "revId": "cd1dda1b8b3f419e7c54c0bb470a99e527797ff5",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
