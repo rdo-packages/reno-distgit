@@ -44,6 +44,7 @@ Requires:  python3-dulwich
 Requires:  git
 
 Requires:  python3-PyYAML
+Requires:  python3-packaging >= 20.4
 
 %description -n python3-%{pypi_name}
 %{common_desc}
