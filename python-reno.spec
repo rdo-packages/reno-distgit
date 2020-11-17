@@ -54,7 +54,7 @@ BuildRequires:  python3-PyYAML
 
 Requires:  python3-pbr
 Requires:  python3-dulwich
-Requires:  git
+Requires:  git-core
 
 Requires:  python3-PyYAML
 Requires:  python3-packaging >= 20.4
