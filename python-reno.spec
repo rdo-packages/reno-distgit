@@ -53,11 +53,11 @@ BuildRequires:  python3-sphinx
 BuildRequires:  python3-PyYAML
 
 Requires:  python3-pbr
-Requires:  python3-dulwich
+Requires:  python3-dulwich >= 0.15.0
 Requires:  git-core
 
-Requires:  python3-PyYAML
 Requires:  python3-packaging >= 20.4
+Requires:  python3-yaml >= 5.3.1
 
 %description -n python3-%{pypi_name}
 %{common_desc}
