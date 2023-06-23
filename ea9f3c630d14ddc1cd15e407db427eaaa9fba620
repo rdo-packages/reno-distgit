@@ -16,6 +16,24 @@
       "message": "Note this is adding extra BRs which may add cyclic requirements:\n\nhttps://logserver.rdoproject.org/51/48951/4/check/DLRN-rpmbuild-centos9-compare-builddeps/6614b58/job-output.txt\n\ni suspect from stevedore and cliff, so we probably should remove reno from automatic BRs in those two (if they are added automatically).",
       "revId": "ea9f3c630d14ddc1cd15e407db427eaaa9fba620",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "764eeae2_bbd0ade8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 635
+      },
+      "writtenOn": "2023-06-23T14:41:15Z",
+      "side": 1,
+      "message": "from https://review.rdoproject.org/r/c/openstack/cliff-distgit/+/48978\nrpm -qp --requires https://logserver.rdoproject.org/78/48978/4/check/DLRN-rpmbuild-centos9/47033d5/buildset/centos9/current/python3-cliff-4.3.0-0.20230623114756.72e81d7.el9.noarch.rpm\npython(abi) \u003d 3.9\npython3.9dist(autopage) \u003e\u003d 0.4\npython3.9dist(cmd2) \u003e\u003d 1\npython3.9dist(importlib-metadata) \u003e\u003d 4.4\npython3.9dist(prettytable) \u003e\u003d 0.7.2\npython3.9dist(pyyaml) \u003e\u003d 3.12\npython3.9dist(stevedore) \u003e\u003d 2.0.1\n\n\nFrom https://review.rdoproject.org/r/c/openstack/stevedore-distgit/+/48952\nrpm -qp --requires https://logserver.rdoproject.org/52/48952/5/check/DLRN-rpmbuild-centos9/0cb3cf1/buildset/centos9/current/python3-stevedore-5.1.0-0.20230623114232.2d99ccc.el9.noarch.rpm\n((python3.9dist(pbr) \u003c 2.1 or python3.9dist(pbr) \u003e 2.1) with python3.9dist(pbr) \u003e\u003d 2)\npython(abi) \u003d 3.9",
+      "parentUuid": "bf399afd_491fc1bd",
+      "revId": "ea9f3c630d14ddc1cd15e407db427eaaa9fba620",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
     }
   ]
 }
