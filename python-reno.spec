@@ -1,6 +1,8 @@
 %{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
 %global sources_gpg_sign 0x2426b928085a020d8a90d0d879ab7008d0896c8a
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
+# we are excluding some BRs from automatic generator
+%global excluded_brs doc8 bandit pre-commit hacking flake8-import-order
 %global pypi_name reno
 
 # Currently, we cannot generate reno docs from a tarball due to
@@ -20,7 +22,7 @@ Version:        XXX
 Release:        XXX
 Summary:        Release NOtes manager
 
-License:        ASL 2.0
+License:        Apache-2.0
 URL:            http://www.openstack.org/
 Source0:        https://tarballs.openstack.org/%{pypi_name}/%{pypi_name}-%{upstream_version}.tar.gz
 # Required for tarball sources verification
@@ -41,23 +43,11 @@ BuildRequires:  openstack-macros
 
 %package -n     python3-%{pypi_name}
 Summary:        RElease NOtes manager
-%{?python_provide:%python_provide python3-%{pypi_name}}
 Obsoletes: python2-%{pypi_name} < %{version}-%{release}
 
 BuildRequires:  python3-devel
-BuildRequires:  python3-dulwich
-BuildRequires:  python3-setuptools
-BuildRequires:  python3-pbr
-BuildRequires:  python3-sphinx
-
-BuildRequires:  python3-PyYAML
-
-Requires:  python3-pbr
-Requires:  python3-dulwich >= 0.15.0
+BuildRequires:  pyproject-rpm-macros
 Requires:  git-core
-
-Requires:  python3-packaging >= 20.4
-Requires:  python3-yaml >= 5.3.1
 
 %description -n python3-%{pypi_name}
 %{common_desc}
@@ -74,15 +64,35 @@ Documentation for reno
 %endif
 %autosetup -n %{pypi_name}-%{upstream_version}
 
+sed -i /.*-c{env:TOX_CONSTRAINTS_FILE.*/d tox.ini
+sed -i /^minversion.*/d tox.ini
+sed -i /^requires.*virtualenv.*/d tox.ini
+
+# Exclude some bad-known BRs
+for pkg in %{excluded_brs};do
+for reqfile in doc/requirements.txt test-requirements.txt; do
+if [ -f $reqfile ]; then
+sed -i /^${pkg}.*/d $reqfile
+fi
+done
+done
+# Automatic BR generation
+%generate_buildrequires
+%if 0%{?with_doc}
+  %pyproject_buildrequires -t -e %{default_toxenv},docs
+%else
+  %pyproject_buildrequires -t -e %{default_toxenv}
+%endif
+
 %build
-%{py3_build}
+%pyproject_wheel
 
 %install
-%{py3_install}
+%pyproject_install
 
 %if 0%{?with_docs}
 # generate html docs
-sphinx-build-3 doc/source html
+%tox -e docs
 # remove the sphinx-build-3 leftovers
 rm -rf html/.{doctrees,buildinfo}
 %endif
@@ -92,11 +102,11 @@ rm -rf html/.{doctrees,buildinfo}
 %license LICENSE
 %{_bindir}/%{pypi_name}
 %{python3_sitelib}/%{pypi_name}
-%{python3_sitelib}/%{pypi_name}-*.egg-info
+%{python3_sitelib}/%{pypi_name}-*.dist-info
 
 %files -n python-%{pypi_name}-doc
 %if 0%{?with_docs}
-%doc html
+%doc doc/build/html
 %endif
 %license LICENSE
 
