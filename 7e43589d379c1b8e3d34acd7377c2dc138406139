@@ -22,6 +22,30 @@
       },
       "revId": "7e43589d379c1b8e3d34acd7377c2dc138406139",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "527df612_e70e85fb",
+        "filename": "python-reno.spec",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2023-06-27T08:24:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f307b282_cf3d7d85",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 19
+      },
+      "revId": "7e43589d379c1b8e3d34acd7377c2dc138406139",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
     }
   ]
 }
